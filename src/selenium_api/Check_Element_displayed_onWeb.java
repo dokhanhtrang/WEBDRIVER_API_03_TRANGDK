@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
+//Unit01
 public class Check_Element_displayed_onWeb {
 	// Create gobal variables
 	WebDriver driver;
