@@ -13,7 +13,6 @@ import org.testng.annotations.Test;
 public class Check_Environment {
 	// Create global variables
 	WebDriver driver;
-
 	// Pre Condition
 	@BeforeClass
 	public void beforeClass() {
