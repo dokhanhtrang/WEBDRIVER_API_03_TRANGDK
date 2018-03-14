@@ -22,7 +22,6 @@ public class Check_Element_Enable_Disable {
 	public void Test01_TextboxIsDisabled() throws Exception {
 		//wait for
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		//get link
 		driver.get("http://daominhdam.890m.com/");
 		driver.manage().window().maximize();
 		String element = "//input[@id='password']";
