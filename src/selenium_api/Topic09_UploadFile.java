@@ -21,7 +21,7 @@ import org.testng.annotations.Test;
 
 public class Topic09_UploadFile {
 	WebDriver driver;
-	String filePath = "C:\\Users\\KhanhTrang\\Google Drive\\Automation Testing Workspace\\WEBDRIVER_API_03_TRANGDK\\upload\\image.jpg";
+	String filePath = "D:\\Selenium\\Workspace\\WEBDRIVER_API_TRANGDK\\upload\\image.jpg";
 	String imgName = "image.jpg";
 
 	@BeforeClass
@@ -82,58 +82,60 @@ public class Topic09_UploadFile {
 //		System.out.println("Done TC02");
 //	}
 //
-//	@Test
-//	public void TC03_uploadfileByRobotClass() throws Exception {
-//		driver.get("http://blueimp.github.io/jQuery-File-Upload/");
-//		// Specify the file location with extension
-//		StringSelection select = new StringSelection(filePath);
-//
-//		// Copy to clipboard
-//		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(select, null);
-//
-//		// Click
-//		WebElement uploadFirefox = driver.findElement(By.xpath("//input[@type='file']"));
-//		uploadFirefox.click();
-//
-//		Robot robot = new Robot();
-//		Thread.sleep(1000);
-//
-//		robot.keyPress(KeyEvent.VK_ENTER);
-//		robot.keyRelease(KeyEvent.VK_ENTER);
-//
-//		robot.keyPress(KeyEvent.VK_CONTROL);
-//		robot.keyPress(KeyEvent.VK_V);
-//
-//		robot.keyRelease(KeyEvent.VK_CONTROL);
-//		robot.keyRelease(KeyEvent.VK_V);
-//		Thread.sleep(1000);
-//
-//		robot.keyPress(KeyEvent.VK_ENTER);
-//		robot.keyRelease(KeyEvent.VK_ENTER);
-//	}
-
 	@Test
-	public void TC04_uploadfile() throws Exception {
-		driver.get("https://encodable.com/uploaddemo/");
-		//choose img
-		driver.findElement(By.xpath("//input[@class='upform_field file required ']")).sendKeys(filePath);
-		//Select
-		Select list = new Select(driver.findElement(By.xpath("//select[@name='subdir1']")));
-		list.selectByIndex(0);
-		//Input folder
-		driver.findElement(By.xpath("//input[@id='newsubdir1']")).sendKeys("Dokhanhtrang");
-		driver.findElement(By.xpath("//input[@name='email_address']")).sendKeys("dokhanhtrang@gmail.com");
-		driver.findElement(By.xpath("//input[@name='first_name']")).sendKeys("Khanh Trang");
-		driver.findElement(By.xpath("//input[@class='button']")).click();
-		assertTrue(driver.findElement(By.xpath("//dd[contains(.,'Email Address: dokhanhtrang@gmail.com')]")).isDisplayed());
-		assertTrue(driver.findElement(By.xpath("//dd[contains(.,'First Name: Khanh Trang')]")).isDisplayed());
-		assertTrue(driver.findElement(By.xpath("//dt[contains(.,'"+imgName+"')]")).isDisplayed());
-		driver.findElement(By.xpath("//a[@href='/uploaddemo/?action=listfiles']")).click();
-		driver.findElement(By.xpath("//a[@href='/uploaddemo/?action=listfiles&path=Dokhanhtrang']")).click();
-		assertTrue(driver.findElement(By.xpath("//a[contains(.,'"+imgName+"')]")).isDisplayed());
-		System.out.println("Done TC04");
+	public void TC03_uploadfileByRobotClass() throws Exception {
+		driver.get("http://blueimp.github.io/jQuery-File-Upload/");
+		// Specify the file location with extension
+		StringSelection select = new StringSelection(filePath);
+
+		// Copy to clipboard
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(select, null);
+
+		// Click
+		WebElement uploadFirefox = driver.findElement(By.xpath("//input[@type='file']"));
+		uploadFirefox.click();
+
+		Robot robot = new Robot();
+		Thread.sleep(1000);
+
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_V);
+
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_V);
+		Thread.sleep(1000);
+
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(10000);
 
 	}
+
+//	@Test
+//	public void TC04_uploadfile() throws Exception {
+//		driver.get("https://encodable.com/uploaddemo/");
+//		//choose img
+//		driver.findElement(By.xpath("//input[@class='upform_field file required ']")).sendKeys(filePath);
+//		//Select
+//		Select list = new Select(driver.findElement(By.xpath("//select[@name='subdir1']")));
+//		list.selectByIndex(0);
+//		//Input folder
+//		driver.findElement(By.xpath("//input[@id='newsubdir1']")).sendKeys("Dokhanhtrang");
+//		driver.findElement(By.xpath("//input[@name='email_address']")).sendKeys("dokhanhtrang@gmail.com");
+//		driver.findElement(By.xpath("//input[@name='first_name']")).sendKeys("Khanh Trang");
+//		driver.findElement(By.xpath("//input[@class='button']")).click();
+//		assertTrue(driver.findElement(By.xpath("//dd[contains(.,'Email Address: dokhanhtrang@gmail.com')]")).isDisplayed());
+//		assertTrue(driver.findElement(By.xpath("//dd[contains(.,'First Name: Khanh Trang')]")).isDisplayed());
+//		assertTrue(driver.findElement(By.xpath("//dt[contains(.,'"+imgName+"')]")).isDisplayed());
+//		driver.findElement(By.xpath("//a[@href='/uploaddemo/?action=listfiles']")).click();
+//		driver.findElement(By.xpath("//a[@href='/uploaddemo/?action=listfiles&path=Dokhanhtrang']")).click();
+//		assertTrue(driver.findElement(By.xpath("//a[contains(.,'"+imgName+"')]")).isDisplayed());
+//		System.out.println("Done TC04");
+//
+//	}
 
 	public int randomData() {
 		Random rand = new Random();
